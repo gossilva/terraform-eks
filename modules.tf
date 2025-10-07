@@ -12,3 +12,12 @@ module "eks_cluster" {
   public_subnet_1a = module.eks_network.subnet_public_1a
   public_subnet_1b = module.eks_network.subnet_public_1b
 }
+
+module "managed_node_group" {
+  source            = "./modules/managed_node_group"
+  project_name      = var.project_name
+  cluster_name      = module.eks_cluster.cluster_name
+  private_subnet_1a = module.eks_network.subnet_private_1a
+  private_subnet_1b = module.eks_network.subnet_private_1b
+  tags              = local.tags
+}
