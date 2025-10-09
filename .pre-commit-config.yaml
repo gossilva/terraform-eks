@@ -6,3 +6,11 @@ repos:
      args:
       - --args=-recursive
    - id: terraform_validate
+   - id: terraform_docs
+     args:
+      - --hook-config=--path-to-file=README.md     
+      - --hook-config=--add-to-existing-file=true     
+      - --hook-config=--create-file-if-not-exist=true 
+      - --hook-config=--use-standard-markers=true    
+      - --hook-config=--custom-marker-begin=<!-- BEGIN_TF_DOCS -->  
+      - --hook-config=--custom-marker-end=<!-- END_TF_DOCS --> 
