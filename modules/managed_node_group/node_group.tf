@@ -7,6 +7,9 @@ resource "aws_eks_node_group" "eks_node_group" {
     var.private_subnet_1b
   ]
 
+  instance_types = ["t2.micro"]
+  capacity_type  = "ON_DEMAND"
+
   scaling_config {
     desired_size = 1
     max_size     = 1
