@@ -7,7 +7,7 @@ resource "helm_release" "eks_helm_controller" {
 
   set = [
 
-    { name = "clusterName", value = var.clusterName },
+    { name = "clusterName", value = var.cluster_name },
     { name = "serviceAccount.create", value = "false" },
     { name = "serviceAccount.name", value = "aws-load-balancer-controller" }
 

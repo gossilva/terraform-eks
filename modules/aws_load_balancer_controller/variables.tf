@@ -12,7 +12,7 @@ variable "oidc" {
   description = "HTTPS URL from OIDC provider of the EKS cluster"
 }
 
-variable "clusterName" {
+variable "cluster_name" {
   type        = string
   description = "EKS cluster name"
 }
